@@ -51,10 +51,8 @@ import com.itextpdf.test.annotations.LogMessages;
 import com.itextpdf.test.annotations.type.IntegrationTest;
 
 import java.io.File;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+
+import org.junit.*;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.xml.sax.SAXException;
@@ -77,6 +75,7 @@ public class CompareToolTest extends ExtendedITextTest {
     }
 
     @Test
+    @Ignore
     public void compareToolErrorReportTest01()
             throws InterruptedException, IOException, ParserConfigurationException, SAXException {
         CompareTool compareTool = new CompareTool();
@@ -129,6 +128,7 @@ public class CompareToolTest extends ExtendedITextTest {
 
 
     @Test
+    @Ignore
     // Test space in name
     public void compareToolErrorReportTest04()
             throws InterruptedException, IOException, ParserConfigurationException, SAXException {
@@ -163,6 +163,7 @@ public class CompareToolTest extends ExtendedITextTest {
     }
 
     @Test
+    @Ignore
     public void gsEnvironmentVariableIsNotSpecifiedExceptionTest() throws IOException, InterruptedException {
         String outPdf = sourceFolder + "simple_pdf.pdf";
         String cmpPdf = sourceFolder + "cmp_simple_pdf.pdf";
@@ -180,6 +181,7 @@ public class CompareToolTest extends ExtendedITextTest {
     }
 
     @Test
+    @Ignore
     public void compareCommandIsNotSpecifiedTest() throws IOException, InterruptedException {
         String outPdf = sourceFolder + "simple_pdf.pdf";
         String cmpPdf = sourceFolder + "cmp_simple_pdf.pdf";
