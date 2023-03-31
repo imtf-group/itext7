@@ -1,0 +1,45 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository/>
+    <interactiveMode/>
+    <offline/>
+    <servers>
+        <server>
+            <id>codeartifact-releases</id>
+            <username>aws</username>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN_RELEASES}</password>
+        </server>
+        <server>
+            <id>codeartifact-snapshots</id>
+            <username>aws</username>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN_SNAPSHOTS}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>code-artifact</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>codeartifact-releases</id>
+                    <url>https://imtf-releases-028952730777.d.codeartifact.eu-west-1.amazonaws.com/maven/hs5/
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+                <repository>
+                    <id>codeartifact-snapshots</id>
+                    <url>https://imtf-snapshots-028952730777.d.codeartifact.eu-west-1.amazonaws.com/maven/hs5/</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles/>
+</settings>
+

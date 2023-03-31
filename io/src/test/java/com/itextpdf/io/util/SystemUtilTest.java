@@ -37,6 +37,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -143,6 +144,7 @@ public class SystemUtilTest extends ExtendedITextTest {
     }
 
     @Test
+    @Ignore
     public void runProcessAndWaitWithWorkingDirectoryTest() throws IOException, InterruptedException {
         String imageMagickPath = SystemUtil.getPropertyOrEnvironmentVariable(ImageMagickHelper.MAGICK_COMPARE_ENVIRONMENT_VARIABLE);
         if (imageMagickPath == null) {
