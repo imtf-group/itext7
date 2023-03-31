@@ -108,6 +108,7 @@ public class PdfTextArray extends PdfArray {
                     set(size() - 1, new PdfNumber(lastNumber));
                 } else {
                     remove(size() - 1);
+                    lastNumber = Float.NaN; //AHYP-11829 https://stackoverflow.com/questions/66561817/itext7-cleanup-method-throws-error-index-was-out-of-range
                 }
             } else {
                 lastNumber = number;
