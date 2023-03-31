@@ -53,15 +53,7 @@ import com.itextpdf.io.source.RandomAccessFileOrArray;
 import com.itextpdf.io.source.RandomAccessSourceFactory;
 import com.itextpdf.io.source.WindowRandomAccessSource;
 import com.itextpdf.kernel.PdfException;
-import com.itextpdf.kernel.pdf.PdfArray;
-import com.itextpdf.kernel.pdf.PdfDate;
-import com.itextpdf.kernel.pdf.PdfDictionary;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfName;
-import com.itextpdf.kernel.pdf.PdfNull;
-import com.itextpdf.kernel.pdf.PdfObject;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -454,7 +446,7 @@ public class SignatureUtil {
 
 
         public ContentsChecker(IRandomAccessSource byteSource) throws IOException {
-            super(byteSource, null);
+            super(byteSource, new ReaderProperties());
         }
 
         public boolean checkWhetherSignatureCoversWholeDocument(PdfFormField signatureField) {
