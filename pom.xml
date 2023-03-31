@@ -59,6 +59,7 @@
     <module>sign</module>
     <module>styled-xml-parser</module>
     <module>svg</module>
+    <module>report-aggregator</module>
   </modules>
 
   <scm>
@@ -74,6 +75,28 @@
     <url>https://jenkins.itextsupport.com/</url>
   </ciManagement>
 
+  <repositories>
+    <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <releases>
+        <checksumPolicy>fail</checksumPolicy>
+      </releases>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>codeartifact-releases</id>
+      <url>https://imtf-releases-028952730777.d.codeartifact.eu-west-1.amazonaws.com/maven/hs5/</url>
+    </repository>
+    <snapshotRepository>
+      <id>codeartifact-snapshots</id>
+      <url>https://imtf-snapshots-028952730777.d.codeartifact.eu-west-1.amazonaws.com/maven/hs5/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <properties>
     <argLine>-Xmx1024m</argLine>
     <bouncycastle.version>1.68</bouncycastle.version>
@@ -82,7 +105,7 @@
     <failsafe.version>3.0.0-M3</failsafe.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
-    <jacoco.version>0.8.4</jacoco.version>
+    <jacoco.version>0.8.8</jacoco.version>
     <java.version>1.8</java.version>
     <javadoc-additionalOptions />
     <javadoc-link>https://docs.oracle.com/javase/8/docs/api/</javadoc-link>
@@ -108,6 +131,11 @@
     <spotbugs.version>3.1.11</spotbugs.version>
     <surefire.version>3.0.0-M3</surefire.version>
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
+    <sonar.organization>imtf-group</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/../report-aggregator/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.language>java</sonar.language>
   </properties>
 
   <dependencies>
