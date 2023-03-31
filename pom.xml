@@ -52,7 +52,6 @@
     <module>forms</module>
     <module>hyph</module>
     <module>io</module>
-    <module>itextcore</module>
     <module>kernel</module>
     <module>layout</module>
     <module>pdfa</module>
